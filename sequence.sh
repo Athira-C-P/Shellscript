@@ -1,12 +1,21 @@
 #!/bin/bash -x
 
-#random function to get single digit
+#Add 2 random dice number
 
-echo $((RANDOM%10))
+dice1=$((RANDOM%6))
+dice2=$((RANDOM%6))
+sum=$((dice1+dice2))
+echo=$sum
 
 
+#find sum and avg of 5 random 2 digit values
 
+sum=0
+for((i=0; i<5; i++))
+do
+	sum=$((sum + $((RANDOM%90+10))))
+done
+avg=$((sum/i))
 
-#random function to get dice number between 1 to 6
-
-echo $((RANDOM%6+1))
+echo "sum= " $sum
+echo "avg= " $avg
